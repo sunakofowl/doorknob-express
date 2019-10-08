@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doorknob Express</title>
+  </head>
+
+  <body>
+    <div id="thinggoeshere">No Thing Yet</div>
+    
+    <script>
+        const thing = document.querySelector('#thinggoeshere')
+
+        const makeServerRequest = () => {
+          fetch('http://localhost:3000/random')
+            .then(result => result.text())
+            .then(mahText => {
+              thing.innerHTML = mahText
+            })
+          }
+
+          setTimeout(makeServerRequest, 1000)
+      </script>
+  </body>
+</html>
